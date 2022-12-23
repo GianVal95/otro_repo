@@ -1,13 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
-const navbar = () => {
+
+const NavBarStore = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
-      <NavLink to='/'>
-        <img src='./logopet.jpg'  width='70' height='70'/>
-      </NavLink>
 
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -21,7 +20,7 @@ const navbar = () => {
             <NavLink className="nav-link" to='/productos'>PRODUCTOS</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to='/galeria'>GALERIA</NavLink>
+            <NavLink className="nav-link" to='/contacto'>CONTACTO</NavLink>
           </li>
          
           <li className="nav-item">
@@ -30,9 +29,15 @@ const navbar = () => {
         </ul>
       </div>
     </div>
+
+    <section>
+      <Outlet></Outlet>
+    </section>
+  
   </nav>
-    
+
+  
   )
 }
 
-export default navbar
+export default NavBarStore
